@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .w {
+            width: 300px;
+            height: 200px;
+            background-color: #999;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .pwd,
+        .box {
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+        }
+        .level {
+            width: 120px;
+            height: 10px;
+            /*background-color: #333;*/
+        }
+        .level1 {
+            width: 120px;
+            height: 10px;
+            background-color: #f00;
+        }
+        .level2 {
+            width: 120px;
+            height: 10px;
+            background-color: #ff0;
+        }
+        .level3 {
+            width: 120px;
+            height: 10px;
+            background-color: green;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="w">
+    <div class="pwd">
+        <label for="inp">密码 ： </label>
+        <input type="password" id="inp">
+    </div>
+
+    <div class="box">
+        <div class="text"></div>
+        <div class="level"></div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        // 密码框 输入事件
+        var inp = document.querySelector('#inp');
+
+        var text = document.querySelector(".text")
+        var level = document.querySelector(".level")
+
+        var arr = [' ','弱','中','强']
+        inp.oninput = function () {
+            if (inp.value.length <= 6){
+                level.className = '';
+                text.innerHTML = arr[0];
+                return;
+            }
+            var count = 0;
+            if (/[0-9]/.test(this.value)){
+                count++;
+            }
+            if (/[a-z]/.test(this.value)){
+                count++;
+            }
+            if (/[A-Z]/.test(this.value)){
+                count++;
+            }
+
+            level.className = "level" + count;
+            text.innerHTML = arr[count];
+
+        }
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

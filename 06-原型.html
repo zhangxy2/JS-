@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 01-js规定 每个构造函数都有一个prototype属性 指向另一个对象 该对象所有的属性方法 都可以被
+    // 构造函数创建的实例对象继承 所以将共享的方法和属性 写在prototype上
+    // function Person(name) {
+    //     this.name = name;
+    // }
+    // Person.prototype.say = function () {
+    //     console.log(this.name)
+    // }
+    // 04-原型对象赋值的第二种方式
+    // Person.prototype = {
+    //     constructor : Person,
+    //     say : function () {
+    //         console.log(this.name)
+    //     }
+    // }
+    //
+    //
+    // var p1 = new Person('jack');
+    // var p2 = new Person('rose');
+    // console.log(p1,p2)
+    // p1.say()
+    // p2.say()
+
+
+    // 02- 构造函数 实例对象 原型之间的关系
+    // 每个构造函数有一个prototype属性 该属性是一个对象
+    // console.log(Person.prototype)
+    // 每个prototype 有一个constructor 属性 该属性指向 prototype 对象所在构造函数
+    // console.log(Person.prototype.constructor === Person)
+    // 每个构造函数创建的实例对象 内包含一个指向构造函数的prototype 的指针 __proto__
+    // console.log(Person.prototype === p1.__proto__)
+
+
+    // 03-原型链
+    // 由一个或者多个原型对象组成
+    // 描述查找对象属性的方法
+    // 在实例对象上找，找不到 在构造函数原型上找，找不到，在prototype 的 原型上找  找不到 null Object.prototype
+    // console.log(p1.__proto__.__proto__.__proto__)
+
+
+
+
+    // 05-日期初始化小案例
+    Date.prototype.f = function () {
+        var aaa = this.getFullYear() +'-'+ (this.getMonth()+1) +'-'+this.getDate()
+        return aaa;
+    }
+    var date = new Date();
+    // console.log(date)
+    console.log(date.f());
+
+
+
+</script>
+
+</body>
+</html>

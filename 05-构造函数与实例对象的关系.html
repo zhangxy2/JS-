@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 构造函数 ： 由具体的事物抽象出来的 抽象模版
+    // 实例对象 ： 根据抽象的构造函数模版 创建 具体实例对象
+    // 每个实例对象 有一个__proto__ 原型  上有一个 constructor 属性 指向创建该实例对象的构造函数
+    // 最初 constructor 用来识别对象类型  现在更推荐使用instanceof 判断数据类型
+
+    function Person(name) {
+        this.name = name;
+        this.say = function () {
+            console.log(111)
+        }
+    }
+    var p1 = new Person('jack')
+    console.log(p1.__proto__)
+    console.log(p1.__proto__.constructor === Person)
+    console.log(p1.constructor === Person)
+    console.log(p1 instanceof Person)
+
+
+
+
+</script>
+</body>
+</html>

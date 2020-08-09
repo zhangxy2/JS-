@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 01、定义函数方式
+    // 函数声明
+    // function f() {
+    //     console.log(111)
+    // }
+    // f() // 调用方式 函数名（）
+
+    // 匿名函数
+    // (function () {
+    //     console.log(2222)
+    // })()
+
+    // new
+    // var f = new Function('a','alert(a)') // 参数 函数体
+    // f(1);
+
+    // 案例 ： 不同浏览器 内核不同 解析方式不同
+
+    if(true){
+        function f() {
+            console.log(111)
+        }
+    }else {
+        function f() {
+            console.log(222)
+        }
+    }
+
+    // 返回1111 true
+    // 返回 222 函数声明提升 后面的函数声明 覆盖前面的
+
+    // 不同this 代表
+    // 普通函数 window
+
+    // 构造函数 实例对象
+
+    // 对象 离他最近的函数
+
+    // 定时器 window
+
+    // 绑定事件  事件元
+
+    // 立即执行函数 window
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

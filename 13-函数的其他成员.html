@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // arguments  传进几个参数 接收几个 避免参数丢失
+    // function f(a) {
+    //     console.log(arguments)
+    // }
+    // f(1,2,3,4)
+
+    // caller  返回调用函数的 函数体
+    // function f() {
+    //     console.log(f.caller)
+    // }
+    // function f1() {
+    //     f()
+    // }
+    // f1()
+
+
+    // name 函数名称
+    // function f() {
+    //     console.log(f.name)
+    // }
+    // f()
+
+
+
+    // 把函数当作参数
+    // function f(fn) {
+    //     fn()
+    // }
+    // f(function () {
+    //     console.log('fn被执行了')
+    // })
+
+    // 把函数当作返回值
+
+    // function f() {
+    //     return function () {
+    //         console.log(1111)
+    //     }
+    // }
+    // // var res = f()
+    // // res();
+    // f()()
+
+    // 函数柯里化
+    function f(n) {
+        console.log(n)
+        return function (n) {
+            console.log(n)
+            return function (n) {
+                console.log(n)
+                return function (n) {
+                    console.log(n)
+                    return function (n) {
+                        console.log(n)
+                    }
+                }
+            }
+        }
+    }
+    f(1)(2)(3)(4)(5)
+
+
+
+
+
+</script>
+
+</body>
+</html>

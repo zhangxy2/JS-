@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 函数内部的变量称为私有变量
+    // 能够操作私有变量的函数为闭包函数
+
+    // 优点： 延长周期 保存数据 不会轻易丢失
+    // 缺点 ： 弹栈 数据一旦被清除 无法访问
+    // 占用内存 要执行到最里面才能一层层弹栈
+
+    // 两个函数嵌套 里面的能使用外部的私有变量 将里面的函数体暴露出来 调用
+    //
+    // function f() {
+    //     var a = 10;
+    //     function f1() {
+    //         a++;
+    //         console.log(a);
+    //     }
+    //     return f1;
+    // }
+    // var res = f()
+    // res()
+
+
+
+    // 对象使用闭包
+    // function f1() {
+    //     var a = 10;
+    //     var b = 20;
+    //     var obj = {
+    //         c : function () {
+    //             a++;
+    //             console.log(a)
+    //         },
+    //         d : function () {
+    //             b--;
+    //             console.log(b)
+    //         }
+    //     }
+    //     return obj;
+    // }
+    // var res = f1();
+    // res.c()
+    // res.d()
+
+    function f() {
+        function f1(a) {
+            return a;
+        }
+        function f2(b) {
+            return b;
+        }
+        return [f1,f2];
+    }
+    var res = f();
+    console.log(res)
+    var a = res[0](1)
+    var b = res[1](2)
+    console.log(a,b)
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

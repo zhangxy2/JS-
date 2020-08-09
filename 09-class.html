@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        skill(){
+            console.log('hi')
+        }
+    }
+    var p1 = new Person();
+    p1.skill()
+
+    class Student extends Person {
+        constructor(name,age,score) {
+            super(name,age);
+            this.score = score
+            super.skill()
+        }
+        say (){
+            console.log('----')
+        }
+        s (){
+            this.say()
+        }
+    }
+
+    var s2 = new Student('a',12,999)
+    console.log(s2)
+    s2.s()
+
+
+
+
+
+
+</script>
+</body>
+</html>

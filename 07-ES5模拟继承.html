@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // es5中模拟继承 call方法
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.skill = function () {
+        console.log('study')
+    }
+
+    function Student(name, age, score) {
+        Person.call(this, name, age);
+        this.score = score;
+        this.sayHi = function () {
+            console.log('hi')
+        }
+    }
+
+    var s1 = new Student('jack', 18, 99);
+    console.log(s1)
+    s1.sayHi()
+    // s1.skill()   --> 原型继承
+
+    Student.prototype = new Person();
+    Student.prototype.constructor = Student;
+    Student.prototype.say = function () {
+        console.log('~~~~~~')
+    }
+
+    var s2 = new Student('rose', 12, 10)
+    console.log(s2)
+
+    s2.sayHi()
+    s2.skill()
+    s2.say()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // 函数内部调用自己 但是容易死循环  要在适当的时机找到停止条件
+    var count = 0;
+
+    function f() {
+        count++;
+        console.log(count);
+        f();
+    }
+
+
+    // 斐波那契额数列
+    // 1 1 2 3 5 8 13 21
+
+    // function Fb(n) {
+    //     if (n === 1 || n === 2){
+    //         return 1;
+    //     }
+    //
+    //     return Fb(n-1) + Fb(n-2);
+    //
+    // }
+    // var res = Fb(6);
+    // console.log(res)
+
+
+    // 阶乘
+    // function fn(n) {
+    //     if (n === 1){
+    //         return 1;
+    //     }
+    //     return fn(n-1) * n
+    // }
+    // var res2 = fn(4);
+    // console.log(res2)
+
+
+    // 递归的逻辑用在对象上
+    // var obj = {
+    //     1: 1,
+    //     2: 1
+    // }
+    //
+    // // 1 1 2 3 5
+    // function fb(n) {
+    //     if (obj[n]) {
+    //         return obj[n];
+    //     }else {
+    //         obj[n] = fb(n - 1) + fb(n - 2)
+    //         return obj[n];
+    //     }
+    //
+    // }
+    //
+    // var res = fb(5);
+    // console.log(res)
+
+
+    // 递归使用 闭包
+
+    function f1() {
+        var obj = {
+            1: 1,
+            2: 1
+        }
+
+        function f2(n) {
+            if (obj[n]) {
+                return obj[n]
+            } else {
+                obj[n] = f2(n - 1) + f2(n - 2)
+                return obj[n]
+            }
+
+        }
+        return f2;
+
+    }
+    var res = f1();
+    console.log(res);
+    var r = res(5)
+    console.log(r)
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

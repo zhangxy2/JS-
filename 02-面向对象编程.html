@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 01-面向对象介绍
+    // 什么是对象 ？ 万物皆对象 对象是具体事物的抽象  对象是容器 封装了 属性和方法
+    // 什么是面向对象 ？ OOP
+    // 面向对象 面向过程 的 区别
+    // 面向过程 亲力亲为 面向对象 指定对象 指挥得到结果  执行者变为指挥者 不是面向过程的替代 是封装
+
+    // 程序中面向对象的基本体现
+    // 打印学生成绩 面向过程 成绩对象 打印函数
+    // var stu1 = {
+    //     name : 'a',
+    //     score : 10
+    // }
+    // var stu2= {
+    //     name : 'b',
+    //     score : 100
+    // }
+    // function getS(student) {
+    //     console.log(student.name + student.score);
+    // }
+    // getS(stu1)
+    // getS(stu2)
+
+    // 面向对象 考虑 Student数据类型 视为对象 name score 为属性 打印成绩
+    // 先创建 实例对象，在发送请求打印成绩
+    function Student(name,score) {
+        this.name = name;
+        this.score = score;
+        this.getS = function () {
+            console.log(this.name + this.score)
+        }
+
+    }
+    var s1 = new Student('a',10)
+    var s2 = new Student('b',100)
+    s1.getS()
+    s2.getS()
+
+
+
+</script>
+</body>
+</html>

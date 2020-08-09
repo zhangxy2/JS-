@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 字符串在处理过程中 很繁琐 不全面
+    // 替换字符串
+    // var str = 'sdghsbfjklsbghgj';
+    // console.log(str.replace('sb','**'));
+    // console.log(str.replace(/sb/g,'**')) // 全局范围内
+
+    // split 切割字符串 返回数组
+    // console.log(str.split('sb'));
+    // join 替换数组中的分隔符
+    // console.log(str.split('sb').join('**'))
+
+    // 正则表达式 ： 一组进行 字符串处理 的 工具
+    // 写法 ： /正则的功能代码/
+    // 匹配内容 app reg.test()   又就行
+
+    // 简单类
+    // 字符类
+    // var reg = /123asd/;
+    // console.log(reg.test('123asdswadegrth'));
+
+    // 反向类 方括号内部写^
+    // var reg = /[^12we]/;
+    // console.log(reg.test('12we')) // false
+    // console.log(reg.test('12wes')) // false
+    // console.log(reg.test('12swe')) // true
+
+    // 范围类
+    // 小写字母 a-z
+    // var reg = /[a-c]/;
+    // console.log(reg.test("1")) // false
+    // console.log(reg.test("a2345yu")) // true
+
+    // 大写字母 A-Z
+    // var reg = /[A-D]/
+    // console.log(reg.test('Asdfghjk')) // t
+    // console.log(reg.test('sadfghj2')) // f
+
+    // 数字 0-9
+    // var reg = /[1-3]/
+    // console.log(reg.test('134789654'));// t
+    // console.log(reg.test('sdfg'));// f
+
+    // 组合类 [a-zA-Z0-9_]
+    // var reg = /[a-cA-C1-3_]/
+    // console.log(reg.test('aadsfghgjk4567'))//t
+    // console.log(reg.test('6'))//f
+
+    // 预定义类
+    // 数字 \d \D
+    // var reg = /\d/;
+    // console.log(reg.test('1234')) // t
+    // console.log(reg.test('dsfg')) // f
+
+    // 字符 \w \W
+    // var reg = /\w/; // [0-9a-zA-Z_]
+    // console.log(reg.test('1234')) // t
+    // console.log(reg.test('^*()')) // f
+    //
+    //
+    // // 不可见字符 \s \S
+    // var reg = /\s/; //
+    // console.log(reg.test(' ')) // t
+    // console.log(reg.test('$%%^&^')) // f
+    //
+    // // 特殊字符   转义字符 \
+    // var reg = /\./; //
+    // console.log(reg.test('.sddfg')) // t
+    // console.log(reg.test('fsvsvb')) // f
+    //
+    //
+    // // 边界 ^$
+    // var reg = /^a$/;
+    // console.log(reg.test('a')) // t
+    // console.log(reg.test('dsfg')) // f
+
+
+    // qq 5-11位 首位不能为0
+    // var reg = /^[1-9][0-9]{4,10}$/;
+    // console.log(reg.test('123456'))
+
+
+
+
+</script>
+</body>
+</html>

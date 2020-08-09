@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // call（对象，参数1，2，3） 换掉this 支持传参 执行了函数 本次调用有效
+    // function f(a, b) {
+    //     console.log(this, a, b)
+    // }
+    //
+    // f.call({
+    //     name: 'jack'
+    // }, 1, 2)
+    // f(3,4)
+
+
+    // apply（对象，[参数1，2，3]） 换掉this 支持传参数组形式 执行了函数 本次调用有效
+    // function f(a, b) {
+    //     console.log(this, a, b)
+    // }
+    //
+    // f.apply({
+    //     name: 'jack'
+    // }, [1, 2])
+    // f(3, 4)
+    //
+    // // 和 Math 一起使用
+    // var arr = [12, 45, 67, 8, 0, 8765432];
+    // console.log(Math.max(1, 234, 56, 8, 0))
+    // console.log(Math.max.apply({name: 'rose'}, arr)) // 可以传数组
+
+
+    // bind（对象，参数1，2，3） 换掉this 支持传参 结果以返回值输新的函数  每次调用都有效
+    // function f(a, b) {
+    //     console.log(this, a, b)
+    // }
+    //
+    // var res = f.bind({
+    //     name: 'jack'
+    // }, 1, 2)
+    // res() // 新的函数调用
+
+
+
+
+
+
+</script>
+</body>
+</html>

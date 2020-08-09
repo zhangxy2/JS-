@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 深拷贝
+    var obj1 = {
+        name: 'jack',
+        age: 18,
+        hobbies: {
+            eat: '各种吃',
+            play: {
+                phone: '吃鸡',
+                computer: '代码'
+            }
+        },
+        data: [1, 2, 3, 4]
+    }
+
+    var obj2 = {};
+
+    function copy(current, target) {
+        for (var k in current) { // 遍历原对象
+
+            // 如果 遍历出来的属性值 是对象  并且不是null  （null是object  直接复制）
+            if (typeof current[k] === 'object' && typeof current[k] !== null) {
+
+                // 如果是数组
+                if (current[k].constructor === Array) {
+                    target[k] = [] // 创建数组的容器
+                } else {
+                    target[k] = {} // 创建对象容器
+                }
+                copy(current[k], target[k])
+            }
+
+            target[k] = current[k]; // 简单数据类型  直接复制
+        }
+
+    }
+
+    copy(obj1, obj2)
+    console.log(obj1,obj2)
+
+</script>
+</body>
+</html>

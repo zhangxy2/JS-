@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 数组方法 遍历
+    // forEach(回调函数，对象 ) 改回调函数里面的this对象  ele index arr
+    // var arr = [1,2,3,4,5]
+    // arr.forEach(function (ele,index,arr) {
+    //     console.log(ele,index,arr,this);
+    // },{
+    //     name : 'jack'
+    // })
+
+    // map() 返回值 组成数组
+    // var arr = [1,2,3,4,5]
+    // var res = arr.map(function (ele,index,arr) {
+    //     console.log(ele,index,arr);
+    //     return index;
+    // })
+    // console.log(res)
+
+
+    // filter() true 组成数组
+    // var arr = [1,2,3,4,5]
+    // var res = arr.filter(function (ele,index,arr) {
+    //     console.log(ele,index,arr);
+    //     return ele%2;
+    // })
+    // console.log(res)
+
+    // some
+    // var arr = [1,2,3,4,5]
+    // var res = arr.some(function (ele,index,arr) {
+    //     console.log(ele,index,arr);
+    //     return ele%2;
+    // })
+    // console.log(res) // true
+
+    // every
+    // var arr = [1,2,3,4,5]
+    // var res = arr.every(function (ele,index,arr) {
+    //     console.log(ele,index,arr);
+    //     return ele%2;
+    // })
+    // console.log(res) // false
+
+
+    // 字符串方法
+    // var str = '    asdf   asdfg   sdfg    ';
+    // console.log(str)
+    // console.log(str.trim())
+
+    // 对象方法
+    // 对象键名 变为 字符串数组 Object.keys
+    var obj = {
+        name : 'jack',
+        age : 12,
+        sex : 'nv'
+    }
+    // console.log(Object.keys(obj))
+
+    // 删除对象
+    // delete obj['age']
+    // delete obj.age;
+    // var a = 'age'
+    // delete  obj[a]
+
+    // console.log(obj)
+
+
+    // 定义新的属性
+    Object.defineProperty(obj,'add',{
+        value : 666,
+        writable : false,
+        configurable : false,
+        enumerable : false
+    })
+
+    delete obj.age;
+    obj.add = 'aaa';
+    for(var k in obj) {
+        console.log(obj[k])
+    }
+
+    console.log(obj)
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
